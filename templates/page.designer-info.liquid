@@ -45,6 +45,9 @@ bannerImage.addEventListener('change', function() {
 
     // Read the file to DataURL format.
     fReader.readAsDataURL(file);
+    setTimeout(function(){
+    localStorage.setItem("imageURL",  document.getElementById("tableBanner").getAttribute("src"));
+  },1000)
 });
 
 function getBase64Image(img) {
@@ -65,10 +68,7 @@ function fetchimage () {
     img.src = "data:image/png;base64," + dataImage;
     // If you don't process the url with getBase64Image, you can just use
     // img.src = dataImage;
-  setTimeout(function(){
-    localStorage.setItem("imageURL",  document.getElementById("tableBanner").getAttribute("src"));
-      alert();
-  },1000)
+  
 }
 
 // Call fetch to get image from localStorage.
